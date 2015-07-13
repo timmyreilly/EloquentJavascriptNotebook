@@ -277,3 +277,52 @@ while (counter < 10) {
 console.log(result);
 // → 1024
 
+Do is very similar to while, except it will run through its body at lease once before checking the condition. 
+This can be helpful for collecting info. 
+
+do {
+  var name = prompt("Who are you?");
+} while (!name);
+console.log(name);
+
+Indenting Code
+
+2 or 4 spaces is the standard. 2 looks pretty good. 
+Indentation is not necessary however, as long as your semicolons are in the right space
+
+For Loops
+
+Because while (counter > some value) is so common, for loops provide a shorter and more comprehensive form
+
+for (var number = 0; number <= 12; number = number + 2)
+  console.log(number);
+  
+ The paranteses after a for keyword must contain two semicolons. 
+ for (initializes the loop; checks whether the loop must continue; updates the state of the loop AFTER every iteration)
+ 
+ var result = 1;
+for (var counter = 0; counter < 10; counter = counter + 1)
+  result = result * 2;
+console.log(result);
+// → 1024
+
+Breaking out of a Loop
+
+break...
+immediately jumps out of the enclosing loop. 
+
+This program finds the first number that is greater than or equal to 20 and divisible by 7. 
+
+for (var current = 20; ; current++) {
+  if (current % 7 == 0)
+    break;
+}
+console.log(current);
+// → 21
+
+Added a little program for solving primes, because I was curious. 
+
+Definitely not eloquent, but it works!
+
+
+  

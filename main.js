@@ -65,3 +65,42 @@ while (counter < 10) {
 console.log(result);
 // → 1024
 
+// do {
+//   var name = prompt("Who are you?");
+// } while (!name);
+// console.log(name);
+
+for (var number = 0; number <= 12; number = number + 2)
+  console.log(number);
+  
+var result = 1;
+for (var counter = 0; counter < 10; counter = counter + 1)
+  result = result * 2;
+console.log(result);
+// → 1024
+
+for (var current = 20; ; current++) {
+  if (current % 7 == 0)
+    break;
+}
+console.log(current);
+// → 21
+
+var primes = [];
+
+for (var current = 2; current < 1000 ; current++) {
+  console.log("current", current);
+  for (var value = 2; ; value++){
+    //console.log("value", value);
+    if (current % value == 0)
+      break;
+  }
+  if (current === value){
+    console.log("PRIME!", current, value);
+    primes.push(current);
+  }else{
+    console.log("Not Prime", current, value);
+  }
+}
+
+console.log(primes);
