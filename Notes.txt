@@ -371,3 +371,16 @@ FUNCTIONS
 
 Functions are the bread and butter of JavaScript programming. 
 
+var square = function(x){
+	returns x * x;
+};
+
+Functions have a set of parameters. And a body. 
+Function body must always be wrapped in braces. 
+
+A function can have multiple parameters or no parameters at all. 
+
+Some functions return, and some functions only have side effects. 
+Like makeNoise
+
+Parameters and Scopes
