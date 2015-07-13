@@ -1,0 +1,162 @@
+http://eloquentjavascript.net/
+
+Chapter 1
+
+Values:
+numbers
+strings
+booleans
+objects
+functions 
+Undefined Values
+
+Call for one and you have it. 
+Dynamically allocated bits for storing values
+If you run out, you'll be able to reassign. 
+This is only a problem if you need to create a bunch
+
+Numbers
+64 bits to store a number
+2^64 different numbers = 18 quintillion
+
+Scientific Notation: 
+2.998e8
+That is 2.998 x 10^8 = 299,800,000
+
+Arithmetic
+
++ * / 
+% modulo
+144 % 12 = 0
+314 % 100 = 14
+
+Special Numbers
+
+Infinity & -Infinity
+NaN = Not a number
+0 / 0 = NaN
+
+Strings
+
+"Double quotes and "
+'single quotes are okay'
+"consitency is best'
+
+\ is a special character for escaping a string so you can add quotes or special meaning.
+
+"This is the first line\nAnd this is the second"
+
+"A newline character is written like "\n"."
+
+can be expressed:
+
+"A newline character is written like \"\\n\"."
+
+Operators cannot be used on strings except for '+' which will concatenate
+
+"con" + "cat" + "e" + "nate" = "concatenate"
+
+Unary Operators
+
+console.log(typeof 4.5)
+// -> number
+console.log(typeof "x")
+// -> String
+
+Booleans
+
+console.log(3 > 2)
+-> True
+
+Strings can be compared in a similar way: 
+
+console.log("Aardvark" < "Zoraster")
+-> True
+
+This is based of the Unicode standard
+
+console.log("Itchy" != "Scratchy")
+-> True
+
+One Javascript Value that is not equal to itself: NaN
+
+console.log(NaN == NaN)
+-> False
+
+Logical Operators
+
+console.log(true && false)
+-> false
+
+console.log(true && true)
+-> true
+
+&& and
+|| or
+!= not
+
+? -- Huh? 
+
+Ternary operatory/Conditional operator
+kinda like either or...
+
+console.log(true ? 1 : 2);
+-> 1
+console.log(false ? 1: 2);
+-> 2
+
+True will yield the value on the left
+False will yield the value on the right
+
+Undefined Values
+
+null and undefined
+are essentially interchangeable...
+
+Automatic Type Conversion
+gets a little tricky, here are some examples: 
+
+console.log(8 * null)
+// → 0
+console.log("5" - 1)
+// → 4
+console.log("5" + 1)
+// → 51
+console.log("five" * 2)
+// → NaN
+console.log(false == 0)
+// → true
+
+if you want precise comparison use: 
+=== or !==
+you might consider using these more often as a defensive measure
+
+Short Circuiting of Logical Operators
+
+The || operator will return the value to its left when that can be converted to true and will return the value on its right otherwise
+console.log(null || "user")
+-> user
+console.log("me" || "you")
+-> me
+
+&& works the other way around... When the value to its left is something that converts to false it returns that value and otherwise it returns the value on the right. 
+
+The right will only be evaluated when necessary, this is why its called short circuting
+
+
+Chapter 2
+
+Program Structure
+
+programming - express sentences in meaningful prose
+
+Expressions and Statements
+
+fragment of code that produces a value is called an expression
+
+Put Semi Colons at the end of statements until you learn the subtleties of Javascript
+
+Variables
+
+
+
