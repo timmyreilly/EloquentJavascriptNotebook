@@ -366,3 +366,8 @@ This will not be executed
 */
 	
   
+CHAPTER 3
+FUNCTIONS
+
+Functions are the bread and butter of JavaScript programming. 
+
