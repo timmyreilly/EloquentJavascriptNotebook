@@ -158,5 +158,41 @@ Put Semi Colons at the end of statements until you learn the subtleties of Javas
 
 Variables
 
+Interesting metaphor: 
+you should imagine variables as tentacles, rather than boxes. They do not contain values:
+They grasp them. A program can access only the values that is still has a hold on
+When you need to remember something you grow a tentacle to hold on to it or you reattach one of your exisiting tentacles to it. 
 
+Hmmm.. Haven't heard it described like that before, but is a nice way to break it down. 
 
+var luigisDebt = 140;
+luigisDebt = luigisDept -35; 
+console.log(luigisDept);
+-> 105
+
+A single var statement may define multiple variables. 
+The definitions must be seperated by commas
+
+Keywords and Reserved Words
+
+Full list of keywords: 
+
+break case catch class const continue debugger
+default delete do else enum export extends false
+finally for function if implements import in
+instanceof interface let new null package private
+protected public return static super switch this
+throw true try typeof var void while with yield
+
+The Environment
+
+When a program starts up the environment contains everything that the language uses
+
+Functions
+
+Functions are pieces of a program wrapped in a value. 
+The tentacle grasps another piece of code. 
+Executing a function is called
+invoking, calling, or applying
+
+alert("Good Morning")
