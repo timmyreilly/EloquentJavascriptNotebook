@@ -196,3 +196,84 @@ Executing a function is called
 invoking, calling, or applying
 
 alert("Good Morning")
+
+The console.log function
+
+var x = 30;
+console.log("the value of x is", x)
+
+Return Values
+
+console.log(Math.max(2, 4));
+// -> 4
+
+A function 'returns' a value. Anything that produces a value is an expression in JavaScript
+
+console.log(Math.min(2,4) + 100);
+// -> 102
+
+Prompt and Confirm
+
+confirm("Shall we, then?");
+prompt("Tell me everything you know.", "...");
+
+These functions aren't common as much anymore, but they are good for learning and experiments
+
+Control Flow
+
+var theNumber = Number(prompt("Pick a number", ""));
+alert("Your number is the square root of " +
+      theNumber * theNumber);
+	  
+This is an example of straight control flow. 
+
+Conditional Execution
+
+Think of a fork in the road, but they both can lead to the same place in the end. 
+
+var theNumber = Number(prompt("Pick a number", ""));
+if (!isNaN(theNumber))
+  alert("Your number is the square root of " +
+        theNumber * theNumber);
+
+IF + ELSE
+
+var theNumber = Number(prompt("Pick a number", ""));
+if (!isNaN(theNumber))
+  alert("Your number is the square root of " +
+        theNumber * theNumber);
+else
+  alert("Hey. Why didn't you give me a number?");
+  
+  
+IF + ELSE IF + ELSE
+
+var num = Number(prompt("Pick a number", "0"));
+
+if (num < 10)
+  alert("Small");
+else if (num < 100)
+  alert("Medium");
+else
+  alert("Large");
+ 
+While and Do Loops
+
+console.log(0);
+console.log(2);
+console.log(4);
+.
+.
+console.log(n*2);
+
+this is tedious so we use... while loops 
+
+var result = 1;
+var counter = 0;
+while (counter < 10) {
+  result = result * 2;
+  counter = counter + 1;
+}
+console.log(result);
+// → 1024
+
