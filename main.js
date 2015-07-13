@@ -104,3 +104,78 @@ for (var current = 2; current < 1000 ; current++) {
 }
 
 console.log(primes);
+
+// for (var number = 0; number <= 12; number += 2)
+// 	console.log(number);
+// 	
+//  switch (prompt("What is the weather like?")) {
+//   case "rainy":
+//     console.log("Remember to bring an umbrella.");
+//     break;
+//   case "sunny":
+//     console.log("Dress lightly.");
+//   case "cloudy":
+//     console.log("Go outside.");
+//     break;
+//   default:
+//     console.log("Unknown weather type!");
+//     break;
+// } 
+
+
+//COMMENT
+
+/*
+COMMENT
+*/
+
+
+// Looping Triangle
+var x = ''
+
+for (var i = 0; i < 7; i++){
+  x = x + '#';
+  console.log(x);
+}
+
+// Fizz Buzz
+
+for(var x = 1; x <= 100 ; x++){
+  if(x%3 == 0 && x%5 == 0){
+    console.log("FizzBuzz");
+    continue;
+  }
+  else if(x%3 == 0){
+    console.log("Fizz");
+    continue;
+  }else if(x%5 == 0){
+    console.log("Buzz");
+    continue;
+  }else{
+    console.log(x);
+  }
+}
+
+var b = " # # # # \n# # # #\n # # # #"
+
+//console.log(b);
+
+var size = 12;
+
+var board = '';
+
+for(i = 0; i < size; i++){
+  if(i%2==0){
+      board += ' ';
+    }
+  for(j = 0; j< size; j++){
+    board += ' #';
+  }
+  
+  board += '\n';
+}
+
+console.log(board);
+
+// uhhh I guest that works. 
+

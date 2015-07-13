@@ -324,5 +324,45 @@ Added a little program for solving primes, because I was curious.
 
 Definitely not eloquent, but it works!
 
+Continue is similar to break, but will just hop to the next iteration of the loop. 
 
+Updating Variables Succinctly
+
+counter = counter + 1;
+
+counter += 1;
+
+counter -= 1; count down
+
+for (var number = 0; number <= 12; number += 2)
+	console.log(number);
+
+Dispatching on a value with Swtich
+
+Switch(prompt("What is the weather like")) {
+	case "rainy":
+		console.log("Remember to bring an umbrella"):
+	case "sunny":
+		console.log("Dress Lightly");
+	case "cloudy":
+		console.log("Go outside");
+		break;
+	default:
+		console.log("Unkown weather type!);
+		break;
+}
+
+fuzzyLittleTurtle is the common way to use capitalization for values
+Number (first letter capitalized) is common for constructors. 
+
+Comments
+
+// This will not be executed
+
+or 
+
+/*
+This will not be executed
+*/
+	
   
