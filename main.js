@@ -140,7 +140,7 @@ console.log(findSolution(24));
 
 var arr = []
 
-for(count = 0; count < 10000; count++){
+for(count = 0; count < 10; count++){
   console.log("Count: ", count);
   x = findSolution(count);
   console.log(x)
@@ -151,3 +151,120 @@ for(count = 0; count < 10000; count++){
 }
 
 console.log(arr);
+
+function printFarmInventory(cows, chickens){
+  var cowString = String(cows);
+  while (cowString.length < 3){
+    cowString = "0" + cowString;
+  }
+  console.log(cowString + " Cows");
+  var chickenString = String(chickens);
+  while (chickenString.length < 3)
+    chickenString = "0" + chickenString;
+  console.log(chickenString + " Chickens");
+}
+printFarmInventory(7, 11);
+
+// Let's do it better
+
+function printZeroPaddedWithLabel(number, label) {
+  var numberString = String(number);
+  while (numberString.length < 3)
+    numberString = "0" + numberString;
+  console.log(numberString + " " + label);
+}
+
+function printsFarmInventory(cows, chickens, pigs){
+  printZeroPaddedWithLabel(cows, "Cows");
+  printZeroPaddedWithLabel(chickens, "Chickens");
+  printZeroPaddedWithLabel(pigs, "Pigs");
+}
+
+printsFarmInventory(7, 11, 133)
+
+
+// Let's pick out a single concept
+
+function zeroPad(number, width) {
+  var string = String(number);
+  while (string.length < width)
+    string = "0" + string;
+  return string;
+}
+
+function prinFarmInventory(cows, chickens, pigs){
+  console.log(zeroPad(cows, 3) + " Cows");
+  console.log(zeroPad(chickens, 3) + " Chickens");
+  console.log(zeroPad(pigs, 3) + " Pigs");
+}
+
+prinFarmInventory(7, 16, 3);
+
+
+var f = function(a) {
+  console.log(a + 2);
+};
+
+f(5);
+
+function g(a, b) {
+  return a * b * 3.5;
+}
+
+console.log(g(4, 1))
+
+function min(a, b){
+  if(a <= b){
+    return a;
+  }else{
+    return b;
+  }
+};
+
+console.log(min(6,2));
+
+//zero is even
+// one is odd
+// For any other number N, its evennes is the same as n-2
+
+function isEven(number){
+  if(number == 0){
+    return 'even';
+  }else if(number == 1){
+    return 'odd'
+  }else if(number < 0){
+    return isEven(-number)
+  }else{
+    return isEven(number-2);
+  }
+}
+
+for(var i = -10; i < 10; i++){
+  console.log(i, isEven(i));
+}
+
+isEven(-1)
+
+function countBs(word){
+  var bs = 0;
+  for(var j = 0; j < word.length -1; j++){
+    if(word.charAt(j) == "B"){
+      bs++;
+    }
+  }
+  return bs;
+}
+
+console.log(countBs("BumBleBee"));
+
+function countChar(word, char){
+  var chars = 0;
+  for (var j = 0; j < word.length -1 ; j++){
+    if (word.charAt(j) == char){
+      chars++;
+    }
+  }
+  return chars;
+}
+
+console.log(countChar("HOLY GUACAMOLE Hey THat's Hot", "H"));
