@@ -268,3 +268,5 @@ function countChar(word, char){
 }
 
 console.log(countChar("HOLY GUACAMOLE Hey THat's Hot", "H"));
+
+
