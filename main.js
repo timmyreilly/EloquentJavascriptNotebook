@@ -196,3 +196,199 @@ function tableFor(event, journal){
 }
 
 console.log(tableFor("pizza", JOURNAL));
+
+var map = {};
+function storePhi(event, phi){
+  map[event] = phi;
+}
+
+storePhi("pizza", 0.069);
+storePhi("touched tree", -0.081);
+console.log("pizza" in map);
+console.log(map["touched tree"]);
+
+
+for (var event in map)
+  console.log("The correlation for '" + event + "'is " + map[event]);
+  
+function gatherCorrelations(journal){
+  var phis = {};
+  for (var entry = 0; entry < journal.length; entry++){
+    var events = journal[entry].events;
+    for (var i = 0; i < events.length; i++){
+      var event = events[i];
+      if(!(event in phis))
+        phis[event] = phi(tableFor(event, journal));
+    }
+  }
+  return phis;
+}
+
+var correlations = gatherCorrelations(JOURNAL);
+console.log(correlations.pizza)
+
+for (var event in correlations)
+  console.log(event + ": " + correlations[event]);
+
+console.log("\n\n")  
+  
+for (var event in correlations){
+  var correlation = correlations[event];
+  if(correlation > 0.1 || correlation < -0.1)
+    console.log(event + ": " + correlation);
+}
+
+for (var i = 0; i < JOURNAL.length; i++){
+  var entry = JOURNAL[i];
+  if (hasEvent("peanuts", entry) && !hasEvent("brushed teeth", entry))
+    entry.events.push("peanut teeth");
+}
+
+console.log(phi(tableFor("peanut teeth", JOURNAL)));
+
+var todoList = [];
+function rememberTo(task){
+  todoList.push(task)
+}
+function whatIsNext(){
+  return todoList.shift();
+}
+function urgentlyRememberTo(task){
+  todoList.unshift(task);
+}
+
+console.log([1, 2, 3, 2, 1].indexOf(2));
+// 1
+console.log([1,2,3,2,1].lastIndexOf(2));
+// 3
+
+console.log([0, 1, 2, 3, 4].slice(2, 4));
+// [2, 3]
+
+console.log([0,1,2,3,4].slice(2));
+// [2, 3, 4]
+
+function remove(array, index){
+  return array.slice(0, index).concat(array.slice(index + 1));
+}
+
+console.log(remove(["a", "b", "c", "d", "d"], 2));
+
+var myString = "Fido";
+myString.myProperty = "value"
+console.log(myString.myProperty);
+// undefined
+
+console.log("coconuts".slice(4, 7));
+// nut
+console.log("coconut".indexOf("u"));
+// 5
+console.log("coconut".indexOf("o"));
+// 1
+
+console.log("one two three".indexOf("ee"));
+// 11
+
+console.log("   okay \n".trim());
+// okay
+
+var string = "abc";
+console.log(string.length);
+// 3
+console.log(string.charAt(0));
+// a
+console.log(string[1]);
+// b
+
+function noArguments(){}
+noArguments(1, 2, 3);
+function threeArguments(a,b,c){}
+threeArguments();
+
+function argumentCounter(){
+  console.log("You gave me", arguments.length, "arguments.");
+}
+
+argumentCounter("Straw man", "Tautology", "Ad hominem");
+// you game me 3 arguments
+
+function addEnty(squirrel){
+  var entry = {events: [], squirrel: squirrel};
+  for (var i = 1; i < arguments.length; i++){
+    entry.events.push(arguments[i]);
+  }
+  journal.push(entry);
+}
+addEnty(true, "work", "touched tree", "pizza", "running", "television");
+
+function randomPointOnCircle(radius){
+  var angle = Math.random() * 2 * Math.PI;
+  return {x: radius * Math.cos(angle), y: radius * Math.sin(angle)};
+}
+
+console.log(randomPointOnCircle(2));
+
+console.log(Math.random());
+
+console.log(Math.random());
+
+console.log(Math.random());
+
+console.log(Math.floor(Math.random() * 10));
+
+console.log(Math.ceil(Math.random() * 10));
+
+var myVar = 10; 
+
+
+console.log("\n Exercises \n");
+
+// NEED to be loaded in browser. 
+//console.log("myVar" in window);
+
+//console.log(window.myVar);
+
+function range(start, end){
+  var a = []
+  var stepCount = 1;
+  if (arguments.length >= 2){
+    stepCount = arguments[2];
+  }
+
+  if (start > end){
+    stepCount = -1
+    if(arguments.length >= 2){
+      stepCount = arguments[2];
+    }
+    for (var count = start; count > end-1; count = count + stepCount){
+      a.push(count);
+    }
+  }
+  
+  for( var count = start; count < end+1; count = count + stepCount){
+    a.push(count);
+  }
+  return a
+}
+
+console.log(range(1, 10));
+
+console.log(range(1, 10, 2));
+
+console.log(range(5, 2, -2));
+
+function sum(numbers){
+  var s = 0;
+  for (var n in numbers){
+    s += numbers[n];
+  }
+  return s;
+}
+
+console.log(sum(range(1, 10)));
+
+console.log(sum(range(5, 20)));
+
+console.log(range(30, 5, -4));
+
+console.log(sum(range(30, 5, -4)));
