@@ -392,3 +392,53 @@ console.log(sum(range(5, 20)));
 console.log(range(30, 5, -4));
 
 console.log(sum(range(30, 5, -4)));
+
+console.log("\n Reversing array \n");
+
+function reverse(arr){
+  var a = []
+  for (n in arr){
+    a.unshift(arr[n]);
+  }
+  return a;
+}
+
+var sampleArr = ['a', 'b', 'c', 'd', 'e'];
+
+console.log(reverse(sampleArr));
+
+function reverseArrayInPlace(arr){
+  // for(n in arr){
+  //   arr.unshift(arr.pop());
+  // }
+  // for ( var count = 0; count < arr.length/2; count++){
+  //   arr.unshift(arr.pop());
+  // }
+  var hold = 0
+  for (var count = 0; count <= arr.length/2; count++){
+//    console.log("arr[count]: ", arr[count], " arr[arr.length-1-count] ", arr[arr.length-1-count] );
+    hold = arr[count]
+    arr[count] = arr[arr.length-1-count];
+    arr[arr.length-1-count] = hold;
+  }
+  
+  return arr;
+}
+
+function reverseArrInPlace(arr){
+  var hold = 0;
+  for (var count = 0; count <= arr.length/2; count++){
+    hold = arr[count];
+    arr[count] = arr[arr.length-1-count];
+    arr[arr.length-1-count] = hold;
+  } 
+}
+
+console.log(reverseArrayInPlace(sampleArr));
+
+
+console.log(sampleArr.length);
+
+console.log(sampleArr[sampleArr.length-1]);
+
+console.log("\n A LIST \n");
