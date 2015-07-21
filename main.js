@@ -407,7 +407,7 @@ var sampleArr = ['a', 'b', 'c', 'd', 'e'];
 
 console.log(reverse(sampleArr));
 
-function reverseArrayInPlace(arr){
+function reverseArrInPlace(arr){
   // for(n in arr){
   //   arr.unshift(arr.pop());
   // }
@@ -425,13 +425,14 @@ function reverseArrayInPlace(arr){
   return arr;
 }
 
-function reverseArrInPlace(arr){
+function reverseArrayInPlace(arr){
   var hold = 0;
   for (var count = 0; count <= arr.length/2; count++){
     hold = arr[count];
     arr[count] = arr[arr.length-1-count];
     arr[arr.length-1-count] = hold;
   } 
+  return arr;
 }
 
 console.log(reverseArrayInPlace(sampleArr));
@@ -442,3 +443,111 @@ console.log(sampleArr.length);
 console.log(sampleArr[sampleArr.length-1]);
 
 console.log("\n A LIST \n");
+
+function arrayToList(arr){
+  var list = {};
+  for (var count = arr.length - 1; count >= 0; count--){
+    //console.log(arr.length);
+    console.log('count: ', count, ' arr[count]: ', arr[count]);
+ 
+    // if(count == arr.length){
+    //   console.log('here');
+    //   console.log(arr.length);
+    //   console.log(count);
+    //   console.log(arr[count]);
+    //   list = {value: arr[count], rest: null};
+    // }else{
+    //   list = {value: arr[count], rest: list};    
+    // }
+    
+    list = {value: arr[count], rest: list};
+    console.log(list);
+  }
+  return list;
+}
+
+var sarr = ['a', 'b', 'c'];
+
+
+var l = arrayToList(sarr);
+
+console.log(l);
+
+console.log('value' in l);
+
+function listToArray(list){
+  var arr = [];
+  var l = list;
+  while(l.rest != null){
+    console.log(l.value)
+    arr.push(l.value);
+    l = l.rest;
+  }
+  return arr;
+}
+
+a = listToArray(l);
+
+console.log(listToArray(l));
+
+function prepend(arr, list){
+  return {value: arrayToList(arr), rest: list}
+}
+
+var sarrr = ['a', 'b'];
+
+var larrr = arrayToList(sarrr);
+
+var newr = prepend(['a'], larrr);
+
+console.log(newr);
+
+console.log("\n NTH \n");
+
+function nth(num, list){
+  console.log('LIST:  ', list);
+  if(num == 0){
+    console.log('list.value: ',list.value);
+    return list.value;
+  }else if(list.rest == null){
+    return undefined;
+  }else{
+    //console.log("recursing: num: ", num, "list: ", list);  
+    return nth(num-1, list.rest);
+  }
+}
+
+console.log(newr);
+
+console.log('this is at the 2 position: ', nth(2, newr));
+
+console.log('this is at the 1 position: ', nth(1, newr));
+
+console.log('this is at the 0 position: ', nth(0, newr));
+
+
+// for (var i = 1; i <= 3; i++){
+//   console.log(nth(i, newr));
+// }
+
+console.log('\n DeepEqual \n');
+
+
+function deepEqual(a, b){
+  if (typeof(a) == obj && typeof(b) == obj){
+    console.log("EYPYEP")
+    return true;
+  }
+  if (typeof(a) === typeof(b)){
+    
+  }
+}
+
+
+var obj = {here: {is: "an"}, object: 2};
+
+console.log(deepEqual(obj, obj));
+
+console.log(deepEqual(obj, {here: 1, object:2}));
+
+console.log(deepEqual(obj, {here: {is: "an"}, object: 2}));
