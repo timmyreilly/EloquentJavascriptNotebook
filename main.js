@@ -534,7 +534,7 @@ console.log('\n DeepEqual \n');
 
 
 function deepEqual(a, b){
-  if (typeof(a) == obj && typeof(b) == obj){
+  if (typeof(a) == "object" && typeof(b) == "object"){
     console.log("EYPYEP")
     return true;
   }
@@ -546,8 +546,13 @@ function deepEqual(a, b){
 
 var obj = {here: {is: "an"}, object: 2};
 
+console.log(typeof(obj));
+
+console.log(typeof(null));
+
 console.log(deepEqual(obj, obj));
 
 console.log(deepEqual(obj, {here: 1, object:2}));
 
 console.log(deepEqual(obj, {here: {is: "an"}, object: 2}));
+
