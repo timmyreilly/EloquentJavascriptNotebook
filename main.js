@@ -250,3 +250,90 @@ console.log('this array is empty because map is only returning an array of numbe
 console.log(average(ancestry.filter(male).map(age)));
 
 console.log(average(ancestry.filter(female).map(age)));
+
+console.log('\n Great-Great \n');
+
+var byName = {};
+
+ancestry.forEach(function(person){
+  byName[person.name] = person;
+});
+
+console.log(byName["Philibert Haverbeke"]);
+
+function reduceAncestors(person, f, defaultValue){
+  function valueFor(person){
+    //console.log(person);
+    if(person == null){
+      return defaultValue;
+    }else{
+      return f(person, valueFor(byName[person.mother]), valueFor(byName[person.father]));
+    }
+  }
+  return valueFor(person);
+}
+
+function sharedDNA(person, fromMother, fromFather){
+  if (person.name == "Pauwels van Haverbeke")
+    return 1;
+  else 
+    return (fromMother + fromFather) / 2;
+}
+
+var ph = byName["Philibert Haverbeke"];
+console.log(reduceAncestors(ph, sharedDNA, 0) / 4);
+
+
+function countAncestors(person, test){
+  function combine(person, fromMother, fromFather){
+    var thisOneCounts = test(person);
+    return fromMother + fromFather + (thisOneCounts ? 1 : 0);
+  }
+  return reduceAncestors(person, combine, 0);
+}
+
+function longLivingPercentage(person){
+  var all = countAncestors(person, function(person){
+    return true;
+  });
+  var longLiving = countAncestors(person, function(person){
+    return (person.died - person.born) >= 70;
+  });
+  return longLiving / all;
+}
+
+console.log(longLivingPercentage(byName["Emile Haverbeke"]));
+
+console.log("\n Binding \n");
+
+
+var theSet = ["Carel Haverbeke", "Maria van Brussel", "Donal Duck"];
+
+function isInSet(set, person){
+  return set.indexOf(person.name) > -1;
+}
+
+
+console.log(ancestry.filter(function(person){
+  return isInSet(theSet, person);
+}));
+
+console.log("\n Same Result using bind \n");
+
+console.log(ancestry.filter(isInSet.bind(null, theSet)));
+
+
+console.log("\n EXERCISES \n");
+
+// Flattening: use the reduce method in combination with the concat method to flaten an array of arrays in a singe array that has all the elements of the inpu arrays. 
+
+var arrays = [[1,2,3],[4, 5],[6]];
+
+// [1, 2, 3, 4, 5, 6];
+
+var newArray = forEach(arrays, function(p){
+  console.log('p: ',p);
+  return p[0].concat(p[1]);
+});
+
+console.log(forEach(arrays, console.log));
