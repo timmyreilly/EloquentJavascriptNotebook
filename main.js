@@ -333,7 +333,33 @@ var arrays = [[1,2,3],[4, 5],[6]];
 
 var newArray = forEach(arrays, function(p){
   console.log('p: ',p);
-  return p[0].concat(p[1]);
 });
 
+// function concat(a,b){
+//   console.log("a: ",a, "b: ", b);
+//   return a + b;
+// }
+
+function poo(a, b){
+  return a.concat(b);
+}
+
+var array3 = arrays.reduce(poo);
+
+console.log("array3: ", array3);
+
+
 console.log(forEach(arrays, console.log));
+
+console.log("\n Second Try \n");
+
+var arrs = [[1,2,3],[4,5],[6]];
+
+console.log(arrs);
+
+console.log(arrs.reduce(function(a,b){
+  return a.concat(b);
+}));
+
+console.log("\n Mother-Child Age Difference \n");
+
