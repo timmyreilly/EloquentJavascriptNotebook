@@ -363,3 +363,75 @@ console.log(arrs.reduce(function(a,b){
 
 console.log("\n Mother-Child Age Difference \n");
 
+function avg(array){
+  function plus(a, b){ return a + b}
+  return array.reduce(plus) / array.length;
+}
+
+
+function hasKnownMother(array){
+  return array.mother;
+}
+
+var bName = {};
+ancestry.forEach(function(person){
+  bName[person.name] = person;
+})
+
+//console.log(bName);
+
+var hasMother = ancestry.filter(hasKnownMother);
+
+console.log(hasMother);
+
+var moms = ancestry.filter(function(p){
+  return p.sex = "f";
+})
+
+//console.log(moms);
+
+// Write Two function every and some, that behave like these methods, except that they take the array as their first argument rather than being a method. 
+
+
+function eve(array, f){
+  for(var i = 0; i < array.length; i++){
+    if (!f(array[i])){
+      return false;
+    }
+  }  
+  return true;  
+}
+
+function som(array, f){
+  for (var i = 0; i < array.length; i++){
+    if (f(array[i])){
+      return true;
+    }
+  }
+  return false;
+}
+
+function so(array, f){
+  array.forEach(function(a, f){
+    console.log(a, f);
+  }, f)
+}
+
+
+console.log(so([NaN, 3, 4], isNaN));
+
+console.log(so([2, 3, 4], isNaN));
+
+
+console.log('\n Meh Implementation \n');
+
+//console.log(isNaN(NaN));
+
+console.log(eve([NaN, NaN, NaN], isNaN));
+
+console.log(eve([NaN, NaN, 4 ], isNaN));
+
+
+console.log(som([NaN, 3, 4], isNaN));
+
+console.log(som([2, 3, 4], isNaN));
